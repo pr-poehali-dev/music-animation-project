@@ -96,8 +96,8 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onTracksAdded }) => {
           relative border-2 border-dashed rounded-xl p-12 text-center transition-all duration-300
           ${
             isDragging
-              ? "border-purple-400 bg-purple-900/20 scale-105"
-              : "border-purple-600/50 bg-purple-900/10 hover:bg-purple-900/20"
+              ? "neon-border scale-105"
+              : "border-cyan-600/50 bg-cyan-900/10 hover:bg-cyan-900/20"
           }
           ${isProcessing ? "pointer-events-none opacity-50" : ""}
         `}
@@ -116,7 +116,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onTracksAdded }) => {
 
         <div className="space-y-4">
           <div
-            className={`mx-auto w-20 h-20 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center ${isProcessing ? "animate-pulse" : isDragging ? "animate-bounce" : ""}`}
+            className={`mx-auto w-20 h-20 rounded-full bg-gradient-to-r from-cyan-500 to-green-500 flex items-center justify-center neon-border ${isProcessing ? "animate-pulse" : isDragging ? "animate-bounce" : ""}`}
           >
             <Icon
               name={isProcessing ? "Loader2" : "Upload"}
@@ -125,10 +125,10 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onTracksAdded }) => {
           </div>
 
           <div>
-            <h3 className="text-xl font-montserrat font-semibold text-white mb-2">
+            <h3 className="text-xl font-semibold text-white mb-2 neon-text">
               {isProcessing ? "Обрабатываем файлы..." : "Загрузите музыку"}
             </h3>
-            <p className="text-purple-300">
+            <p className="neon-text-green">
               {isProcessing
                 ? "Подождите, анализируем ваши треки"
                 : "Перетащите файлы сюда или нажмите для выбора"}
@@ -136,7 +136,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onTracksAdded }) => {
           </div>
 
           {!isProcessing && (
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-lg transform hover:scale-105 transition-all duration-200">
+            <Button className="bg-gradient-to-r from-cyan-600 to-green-600 hover:from-cyan-700 hover:to-green-700 text-white font-semibold px-8 py-3 rounded-lg transform hover:scale-105 transition-all duration-200 neon-border">
               <Icon name="FolderOpen" className="mr-2 w-5 h-5" />
               Выбрать файлы
             </Button>
@@ -145,7 +145,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onTracksAdded }) => {
       </div>
 
       <div className="mt-6 text-center">
-        <p className="text-sm text-purple-400">
+        <p className="text-sm neon-text-green">
           Поддерживаются форматы: MP3, WAV, FLAC, AAC, OGG
         </p>
       </div>

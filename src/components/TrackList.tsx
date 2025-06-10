@@ -49,10 +49,8 @@ const TrackList: React.FC<TrackListProps> = ({
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-montserrat font-bold text-white">
-          Ваша музыка
-        </h2>
-        <span className="text-purple-400 text-sm">
+        <h2 className="text-2xl font-bold text-white neon-text">Ваша музыка</h2>
+        <span className="neon-text-green text-sm">
           {tracks.length} {tracks.length === 1 ? "трек" : "треков"}
         </span>
       </div>
@@ -65,8 +63,8 @@ const TrackList: React.FC<TrackListProps> = ({
               group flex items-center space-x-4 p-4 rounded-lg transition-all duration-200 cursor-pointer
               ${
                 currentTrack?.id === track.id
-                  ? "bg-gradient-to-r from-purple-600/30 to-pink-600/30 border border-purple-500/50"
-                  : "hover:bg-purple-900/20 hover:border hover:border-purple-600/30"
+                  ? "bg-gradient-to-r from-cyan-600/30 to-green-600/30 neon-border"
+                  : "hover:bg-cyan-900/20 hover:border hover:border-cyan-600/30"
               }
             `}
             onClick={() => onTrackSelect(track)}
@@ -76,19 +74,19 @@ const TrackList: React.FC<TrackListProps> = ({
               {currentTrack?.id === track.id ? (
                 <div className="w-4 h-4 mx-auto">
                   <div className="flex space-x-1 items-center justify-center">
-                    <div className="w-1 h-4 bg-purple-400 animate-pulse rounded-full"></div>
+                    <div className="w-1 h-4 bg-cyan-400 animate-pulse rounded-full"></div>
                     <div
-                      className="w-1 h-2 bg-purple-400 animate-pulse rounded-full"
+                      className="w-1 h-2 bg-cyan-400 animate-pulse rounded-full"
                       style={{ animationDelay: "0.2s" }}
                     ></div>
                     <div
-                      className="w-1 h-3 bg-purple-400 animate-pulse rounded-full"
+                      className="w-1 h-3 bg-cyan-400 animate-pulse rounded-full"
                       style={{ animationDelay: "0.4s" }}
                     ></div>
                   </div>
                 </div>
               ) : (
-                <span className="text-purple-400 text-sm group-hover:hidden">
+                <span className="neon-text-green text-sm group-hover:hidden">
                   {index + 1}
                 </span>
               )}
@@ -99,7 +97,7 @@ const TrackList: React.FC<TrackListProps> = ({
             </div>
 
             {/* Cover */}
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-green-500 rounded-lg flex items-center justify-center flex-shrink-0 neon-border">
               {track.coverUrl ? (
                 <img
                   src={track.coverUrl}
@@ -113,14 +111,14 @@ const TrackList: React.FC<TrackListProps> = ({
 
             {/* Track Info */}
             <div className="flex-1 min-w-0">
-              <h3 className="font-medium text-white truncate group-hover:text-purple-200">
+              <h3 className="font-medium text-white truncate group-hover:text-cyan-200 neon-text">
                 {track.title}
               </h3>
-              <p className="text-sm text-purple-400 truncate">{track.artist}</p>
+              <p className="text-sm neon-text-green truncate">{track.artist}</p>
             </div>
 
             {/* Duration */}
-            <div className="text-purple-400 text-sm flex-shrink-0">
+            <div className="neon-text-green text-sm flex-shrink-0">
               {formatTime(track.duration)}
             </div>
 
@@ -132,7 +130,7 @@ const TrackList: React.FC<TrackListProps> = ({
                 e.stopPropagation();
                 onTrackRemove(track.id);
               }}
-              className="opacity-0 group-hover:opacity-100 text-purple-400 hover:text-red-400 hover:bg-red-900/20 transition-all duration-200"
+              className="opacity-0 group-hover:opacity-100 neon-text-green hover:text-red-400 hover:bg-red-900/20 transition-all duration-200"
             >
               <Icon name="Trash2" className="w-4 h-4" />
             </Button>

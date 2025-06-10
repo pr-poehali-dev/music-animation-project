@@ -84,8 +84,8 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
 
   if (!currentTrack) {
     return (
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-purple-900/90 to-indigo-900/90 backdrop-blur-lg border-t border-purple-500/20 p-6">
-        <div className="flex items-center justify-center text-purple-300">
+      <div className="fixed bottom-0 left-0 right-0 cyberpunk-bg backdrop-blur-lg neon-border-green p-6">
+        <div className="flex items-center justify-center neon-text">
           <Icon name="Music" className="mr-2" />
           Выберите трек для воспроизведения
         </div>
@@ -96,7 +96,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
   return (
     <>
       <audio ref={audioRef} />
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-purple-900/95 to-indigo-900/95 backdrop-blur-xl border-t border-purple-500/30 p-6 shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 cyberpunk-bg backdrop-blur-xl neon-border p-6 shadow-2xl">
         <div className="max-w-6xl mx-auto">
           {/* Progress Bar */}
           <div className="mb-4">
@@ -117,7 +117,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             {/* Track Info */}
             <div className="flex items-center space-x-4 flex-1">
               <div
-                className={`w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center ${isPlaying ? "animate-pulse" : ""}`}
+                className={`w-16 h-16 bg-gradient-to-br from-cyan-500 to-green-500 rounded-lg flex items-center justify-center neon-border ${isPlaying ? "animate-pulse" : ""}`}
               >
                 {currentTrack.coverUrl ? (
                   <img
@@ -130,10 +130,10 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                 )}
               </div>
               <div className="text-white">
-                <h3 className="font-montserrat font-semibold text-lg truncate max-w-xs">
+                <h3 className="font-semibold text-lg truncate max-w-xs neon-text">
                   {currentTrack.title}
                 </h3>
-                <p className="text-purple-300 text-sm truncate max-w-xs">
+                <p className="neon-text-green text-sm truncate max-w-xs">
                   {currentTrack.artist}
                 </p>
               </div>
@@ -145,7 +145,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                 variant="ghost"
                 size="sm"
                 onClick={onPrevious}
-                className="text-white hover:text-purple-300 hover:bg-purple-800/30"
+                className="text-white hover:text-cyan-300 hover:bg-cyan-800/30 neon-border"
               >
                 <Icon name="SkipBack" className="w-5 h-5" />
               </Button>
@@ -163,7 +163,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                 variant="ghost"
                 size="sm"
                 onClick={onNext}
-                className="text-white hover:text-purple-300 hover:bg-purple-800/30"
+                className="text-white hover:text-cyan-300 hover:bg-cyan-800/30 neon-border"
               >
                 <Icon name="SkipForward" className="w-5 h-5" />
               </Button>
@@ -171,7 +171,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
 
             {/* Volume */}
             <div className="flex items-center space-x-2 flex-1 justify-end">
-              <Icon name="Volume2" className="text-purple-300 w-4 h-4" />
+              <Icon name="Volume2" className="neon-text-green w-4 h-4" />
               <Slider
                 value={volume}
                 max={1}

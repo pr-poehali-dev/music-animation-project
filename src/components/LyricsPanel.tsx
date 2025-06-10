@@ -83,7 +83,7 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
     return (
       <Button
         onClick={onToggle}
-        className="fixed right-6 top-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full w-12 h-12 z-10"
+        className="fixed right-6 top-6 bg-gradient-to-r from-cyan-600 to-green-600 hover:from-cyan-700 hover:to-green-700 text-white rounded-full w-12 h-12 z-10 neon-border"
       >
         <Icon name="FileText" className="w-5 h-5" />
       </Button>
@@ -94,22 +94,22 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
     <>
       <Button
         onClick={onToggle}
-        className="fixed right-6 top-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full w-12 h-12 z-20"
+        className="fixed right-6 top-6 bg-gradient-to-r from-cyan-600 to-green-600 hover:from-cyan-700 hover:to-green-700 text-white rounded-full w-12 h-12 z-20 neon-border"
       >
         <Icon name="X" className="w-5 h-5" />
       </Button>
 
-      <div className="fixed right-0 top-0 h-full w-96 bg-gradient-to-b from-purple-900/95 to-indigo-900/95 backdrop-blur-xl border-l border-purple-500/30 z-10 overflow-hidden">
+      <div className="fixed right-0 top-0 h-full w-96 cyberpunk-bg backdrop-blur-xl neon-border-green z-10 overflow-hidden">
         <div className="p-6 h-full flex flex-col">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-montserrat font-bold text-white">
+            <h2 className="text-xl font-bold text-white neon-text">
               Текст песни
             </h2>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsEditing(!isEditing)}
-              className="text-purple-300 hover:text-white hover:bg-purple-800/30"
+              className="neon-text-green hover:text-white hover:bg-cyan-800/30"
             >
               <Icon name={isEditing ? "Check" : "Edit"} className="w-4 h-4" />
             </Button>
@@ -118,10 +118,10 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
           {currentTrack ? (
             <div className="flex-1 overflow-hidden">
               <div className="mb-4 p-4 bg-purple-800/20 rounded-lg border border-purple-600/30">
-                <h3 className="font-semibold text-white truncate">
+                <h3 className="font-semibold text-white truncate neon-text">
                   {currentTrack.title}
                 </h3>
-                <p className="text-purple-300 text-sm truncate">
+                <p className="neon-text-green text-sm truncate">
                   {currentTrack.artist}
                 </p>
               </div>
@@ -131,7 +131,7 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
                   value={lyrics}
                   onChange={(e) => setLyrics(e.target.value)}
                   placeholder="Вставьте текст песни здесь..."
-                  className="h-full bg-purple-900/30 border-purple-600/50 text-white placeholder-purple-400 resize-none"
+                  className="h-full bg-cyan-900/30 border-cyan-600/50 text-white placeholder-cyan-400 resize-none"
                 />
               ) : (
                 <div className="h-full overflow-y-auto space-y-2 pr-2">
@@ -143,8 +143,8 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
                           p-3 rounded-lg transition-all duration-300 cursor-pointer
                           ${
                             index === currentLineIndex
-                              ? "bg-gradient-to-r from-purple-600/40 to-pink-600/40 border border-purple-400/50 text-white font-medium scale-105 shadow-lg"
-                              : "text-purple-300 hover:text-white hover:bg-purple-800/20"
+                              ? "bg-gradient-to-r from-cyan-600/40 to-green-600/40 neon-border text-white font-medium scale-105 shadow-lg"
+                              : "neon-text-green hover:text-white hover:bg-cyan-800/20"
                           }
                         `}
                       >
@@ -152,7 +152,7 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
                       </div>
                     ))
                   ) : (
-                    <div className="text-center text-purple-400 mt-12">
+                    <div className="text-center neon-text-green mt-12">
                       <Icon
                         name="FileText"
                         className="w-12 h-12 mx-auto mb-4 opacity-50"
@@ -171,10 +171,10 @@ const LyricsPanel: React.FC<LyricsPanelProps> = ({
               <div>
                 <Icon
                   name="Music"
-                  className="w-16 h-16 text-purple-400 mx-auto mb-4 opacity-50"
+                  className="w-16 h-16 neon-text-green mx-auto mb-4 opacity-50"
                 />
-                <p className="text-purple-400">Выберите трек</p>
-                <p className="text-purple-500 text-sm mt-2">
+                <p className="neon-text-green">Выберите трек</p>
+                <p className="neon-text-green text-sm mt-2">
                   чтобы увидеть текст песни
                 </p>
               </div>

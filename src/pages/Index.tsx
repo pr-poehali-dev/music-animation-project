@@ -78,12 +78,12 @@ const Index = () => {
   }, [tracks, currentTrack]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 relative overflow-hidden">
+    <div className="min-h-screen cyberpunk-bg relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-full animate-pulse"></div>
+        <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-cyan-500/10 to-green-500/10 rounded-full animate-pulse"></div>
         <div
-          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-indigo-600/10 to-purple-600/10 rounded-full animate-pulse"
+          className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-cyan-400/10 to-green-400/10 rounded-full animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -96,16 +96,15 @@ const Index = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center animate-bounce">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-500 rounded-full flex items-center justify-center animate-bounce neon-border">
                 <Icon name="Music" className="text-white text-2xl" />
               </div>
             </div>
-            <h1 className="text-5xl font-montserrat font-bold text-white mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Music Space
+            <h1 className="text-5xl font-bold text-white mb-4 neon-text neon-glow">
+              MUSIC SPACE
             </h1>
-            <p className="text-xl text-purple-300 max-w-2xl mx-auto">
-              Загружайте и слушайте свою музыку с красивыми анимациями и
-              синхронизированными текстами
+            <p className="text-xl neon-text-green max-w-2xl mx-auto">
+              Загружайте и слушайте свою музыку с киберпанк анимациями
             </p>
           </div>
 

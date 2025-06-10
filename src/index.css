@@ -99,3 +99,63 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Neon Cyberpunk Effects */
+@layer components {
+  .neon-text {
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff,
+      0 0 20px #00ffff;
+    color: #00ffff;
+  }
+
+  .neon-text-green {
+    text-shadow:
+      0 0 5px #00ff41,
+      0 0 10px #00ff41,
+      0 0 15px #00ff41,
+      0 0 20px #00ff41;
+    color: #00ff41;
+  }
+
+  .neon-border {
+    border: 1px solid #00ffff;
+    box-shadow:
+      0 0 10px #00ffff,
+      inset 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+
+  .neon-border-green {
+    border: 1px solid #00ff41;
+    box-shadow:
+      0 0 10px #00ff41,
+      inset 0 0 10px rgba(0, 255, 65, 0.1);
+  }
+
+  .cyberpunk-bg {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  }
+
+  .neon-glow {
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon-pulse {
+    from {
+      text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 15px #00ffff,
+        0 0 20px #00ffff;
+    }
+    to {
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        0 0 40px #00ffff;
+    }
+  }
+}
